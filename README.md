@@ -7,7 +7,7 @@ npm install @tomsd/tag
 
 # Usage
 ``` html
-<script src="https://cdn.jsdelivr.net/npm/screen-animation"></script>
+<script src="https://cdn.jsdelivr.net/npm/@tomsd/tag"></script>
 ```
 
 ``` javascript
