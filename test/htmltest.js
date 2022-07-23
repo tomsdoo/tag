@@ -17,8 +17,4 @@ describe("Tag", () => {
       "window.Tag does not exist"
     );
   });
-
-  it("1 == 1", () => {
-    assert.equal(1,1, "ng")
-  });
 });
