@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="../node_modules/mocha/mocha.css" />
+<script src="../dist/tag.js"></script>
+</head>
+<body>
+<div id="mocha"></div>
+<div id="testarea" style="display:none;">
+  <div></div>
+  <textarea name="test"></textarea>
+  <a name="testanchor">test1</a>
+  <a name="testanchor">test2</a>
+  <a name="testanchor" style="color:red;">test3</a>
+  <a name="testanchor" style="color:green;">test4</a>
+</div>
+<script src="../node_modules/mocha/mocha.js"></script>
+<script>
+mocha.setup("bdd");
+</script>
+
+
+
+<script src="htmltest.js"></script>
+
+<script>
+mocha.run();
+</script>
+</body>
+</html>
