@@ -10,11 +10,42 @@ assert.equal = (a,b,message) => {
   }
 };
 
-describe("Tag", () => {
+describe("Tag Class", () => {
   it("window.Tag", () => {
     assert(
       window.Tag,
       "window.Tag does not exist"
+    );
+  });
+
+  it("extending", () => {
+    class ATag extends Tag {
+      constructor(){
+        super("a");
+      }
+    }
+
+    class BlankATag extends ATag {
+      constructor(){
+        super();
+      }
+      create(attributes, styles){
+        return super.create(
+          {
+            target: "_blank",
+            ...attributes
+          },
+          styles
+        );
+      }
+    }
+
+    assert.equal(
+      new BlankATag()
+        .create()
+        .getAttribute("target"),
+      "_blank",
+      "target _blank is not set"
     );
   });
 });
