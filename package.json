@@ -4,7 +4,7 @@
   "description": "It is a tag generator class",
   "main": "dist/tag.js",
   "scripts": {
-    "build": "webpack",
+    "build": "webpack --config webpack.config.js",
     "test": "exit 0",
     "test_browser": "open test/test.html"
   },
