@@ -11,14 +11,54 @@ assert.equal = (a,b,message) => {
 };
 
 describe("Tag Class", () => {
-  it("window.Tag", () => {
+  it("Tag class exists", () => {
     assert(
       window.Tag,
       "window.Tag does not exist"
     );
   });
 
-  it("extending", () => {
+  it("attributesTemplate", () => {
+    const targetBlankAnchor = new Tag(
+      "a",
+      {
+        attributes: {
+          target: "_blank"
+        }
+      }
+    );
+    const url = "https://www.google.com";
+    const element = targetBlankAnchor
+      .create({ href: url });
+
+    assert(
+      element.getAttribute("target") === "_blank" &&
+      element.getAttribute("href") === url,
+      "attributesTemplate does not work"
+    );
+  });
+
+  it("stylesTemplate", () => {
+    const greenAnchor = new Tag(
+      "a",
+      {
+        styles: {
+          color: "green"
+        }
+      }
+    );
+    const url = "https://www.google.com";
+    const element = greenAnchor
+      .create({ href: url });
+
+    assert(
+      "color" in element.style &&
+      element.style.color === "green",
+      "stylesTemplate does not work"
+    );
+  });
+
+  it("extending class", () => {
     class ATag extends Tag {
       constructor(){
         super("a");
