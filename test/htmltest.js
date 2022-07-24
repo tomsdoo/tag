@@ -69,15 +69,9 @@ describe("Tag Class", () => {
   });
 
   it("extending class", () => {
-    class ATag extends Tag {
+    class BlankATag extends Tag {
       constructor(){
         super("a");
-      }
-    }
-
-    class BlankATag extends ATag {
-      constructor(){
-        super();
       }
       create(attributes, styles){
         return super.create(
