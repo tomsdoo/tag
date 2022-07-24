@@ -1,12 +1,12 @@
 const assert = (condition, message) => {
   if(!condition){
-    throw new Error(message);
+    throw new Error(message || "");
   }
 };
 
-assert.equal = (a,b,message) => {
+assert.equal = (a, b, message) => {
   if(a != b){
-    throw new Error(message);
+    throw new Error(message || "");
   }
 };
 
@@ -32,10 +32,7 @@ const variables = {
 
 describe("Tag Class", () => {
   it("Tag class exists", () => {
-    assert(
-      window.Tag,
-      "window.Tag does not exist"
-    );
+    assert(window.Tag);
   });
 
   it("attributesTemplate", () => {
@@ -48,8 +45,7 @@ describe("Tag Class", () => {
 
     assert(
       element.getAttribute("target") === "_blank" &&
-      element.getAttribute("href") === variables.urls.google,
-      "attributesTemplate does not work"
+      element.getAttribute("href") === variables.urls.google
     );
   });
 
@@ -63,8 +59,7 @@ describe("Tag Class", () => {
 
     assert(
       "color" in element.style &&
-      element.style.color === "green",
-      "stylesTemplate does not work"
+      element.style.color === "green"
     );
   });
 
@@ -88,8 +83,7 @@ describe("Tag Class", () => {
       new BlankATag()
         .create()
         .getAttribute("target"),
-      "_blank",
-      "target _blank is not set"
+      "_blank"
     );
   });
 });
