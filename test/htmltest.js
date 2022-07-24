@@ -10,6 +10,26 @@ assert.equal = (a,b,message) => {
   }
 };
 
+const variables = {
+  urls: {
+    google: "https://www.google.com/"
+  },
+  attributes: {
+    targetBlank: {
+      attributes: {
+        target: "_blank"
+      }
+    }
+  },
+  styles: {
+    colorGreen: {
+      styles: {
+        color: "green"
+      }
+    }
+  }
+};
+
 describe("Tag Class", () => {
   it("Tag class exists", () => {
     assert(
@@ -21,19 +41,14 @@ describe("Tag Class", () => {
   it("attributesTemplate", () => {
     const targetBlankAnchor = new Tag(
       "a",
-      {
-        attributes: {
-          target: "_blank"
-        }
-      }
+      variables.attributes.targetBlank
     );
-    const url = "https://www.google.com";
     const element = targetBlankAnchor
-      .create({ href: url });
+      .create({ href: variables.urls.google });
 
     assert(
       element.getAttribute("target") === "_blank" &&
-      element.getAttribute("href") === url,
+      element.getAttribute("href") === variables.urls.google,
       "attributesTemplate does not work"
     );
   });
@@ -41,15 +56,10 @@ describe("Tag Class", () => {
   it("stylesTemplate", () => {
     const greenAnchor = new Tag(
       "a",
-      {
-        styles: {
-          color: "green"
-        }
-      }
+      variables.styles.colorGreen
     );
-    const url = "https://www.google.com";
     const element = greenAnchor
-      .create({ href: url });
+      .create({ href: variables.urls.google });
 
     assert(
       "color" in element.style &&
@@ -72,7 +82,7 @@ describe("Tag Class", () => {
       create(attributes, styles){
         return super.create(
           {
-            target: "_blank",
+            ...variables.attributes.targetBlank.attributes,
             ...attributes
           },
           styles
