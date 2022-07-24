@@ -11,4 +11,17 @@ describe("Tag class", () => {
     );
   });
 
+  it("property attributesTemplate", () => {
+    const attributes = {
+      target: "_blank"
+    };
+
+    assert.equal(
+      JSON.stringify(
+        new Tag("a", { attributes }).attributesTemplate
+      ),
+      JSON.stringify(attributes)
+    );
+  });
+
 });
