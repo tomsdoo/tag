@@ -4,16 +4,19 @@ type templateOptions = {
 };
 
 export class Tag {
-  protected name: string;
+  protected _name: string;
   protected attributesTemplate: any;
   protected stylesTemplate: any;
   constructor(
     name: string,
     { attributes, styles }: templateOptions = {}
   ) {
-    this.name = name;
+    this._name = name;
     this.attributesTemplate = attributes || {};
     this.stylesTemplate = styles || {};
+  }
+  public get name(){
+    return this._name;
   }
   protected mergeAttributes(attributes: any){
     return {
