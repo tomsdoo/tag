@@ -38,6 +38,7 @@ export class Tag {
           )
             .every(
               ([key, value]) =>
+                // @ts-ignore
                 key in element && element[key] == value
             )
         )
@@ -65,6 +66,7 @@ export class Tag {
       this.mergeStyles(styles)
     )
       .forEach(([key, value]) => {
+        // @ts-ignore
         element.style[key] = value;
       });
 
