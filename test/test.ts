@@ -24,4 +24,17 @@ describe("Tag class", () => {
     );
   });
 
+  it("property stylesTemplate", () => {
+    const styles = {
+      color: "green"
+    };
+
+    assert.equal(
+      JSON.stringify(
+        new Tag("a", { styles }).stylesTemplate
+      ),
+      JSON.stringify(styles)
+    );
+  });
+
 });
