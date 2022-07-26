@@ -12,7 +12,9 @@
   "author": "tom",
   "license": "MIT",
   "devDependencies": {
+    "@types/jsdom": "^20.0.0",
     "@types/mocha": "^9.1.1",
+    "jsdom": "^20.0.0",
     "mocha": "^10.0.0",
     "ts-loader": "^9.3.1",
     "ts-node": "^10.9.1",
