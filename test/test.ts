@@ -50,6 +50,24 @@ describe("Tag class", () => {
     );
   });
 
+  it("attributesTemplate", () => {
+    const elementId = "my-id";
+    const elementValue = "element-value";
+    document.body.appendChild(
+      new Tag(
+        "a",
+        {
+          attributes: { id: elementId }
+        }
+      ).create()
+    ).innerHTML = elementValue;
+
+    assert.equal(
+      (document.getElementById(elementId) as HTMLElement).innerHTML,
+      elementValue
+    );
+  });
+
   it("Custom class", () => {
     const valueChanged = "value-changed";
     class CustomAnchor extends Tag {
