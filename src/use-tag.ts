@@ -6,4 +6,5 @@ declare global {
   }
 }
 
+// @ts-ignore
 window.Tag = windowTag;
