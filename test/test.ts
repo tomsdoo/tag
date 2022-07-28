@@ -68,6 +68,26 @@ describe("Tag class", () => {
     );
   });
 
+  it("stylesTemplate", () => {
+    const elementId = "my-id";
+    const elementValue = "elemnet-value";
+    const elementWidth = "56px";
+    document.body.appendChild(
+      new Tag(
+        "a",
+        {
+          attributes: { id: elementId },
+          styles: { width: elementWidth }
+        }
+      ).create()
+    ).innerHTML = elementValue;
+
+    assert.equal(
+      (document.getElementById(elementId) as HTMLElement).style.width,
+      elementWidth
+    );
+  });
+
   it("Custom class", () => {
     const valueChanged = "value-changed";
     class CustomAnchor extends Tag {
