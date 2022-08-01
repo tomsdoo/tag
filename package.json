@@ -8,7 +8,7 @@
     "test": "TS_NODE_COMPILER_OPTIONS='{\"module\":\"commonjs\"}' mocha -r ts-node/register \"test/test.ts\" --timeout 30000",
     "test_browser": "npm run build && open test/test.html"
   },
-  "keywords": [],
+  "keywords": ["html", "dom", "tag"],
   "author": "tom",
   "license": "MIT",
   "devDependencies": {
