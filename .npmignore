@@ -1,0 +1,9 @@
+.github/
+node_modules/
+src/
+test/
+.gitignore
+.npmignore
+package-lock.json
+tsconfig.json
+webpack.config.js
