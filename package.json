@@ -1,6 +1,6 @@
 {
   "name": "@tomsd/tag",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "It is a tag generator class",
   "main": "dist/tag.js",
   "scripts": {
@@ -8,7 +8,11 @@
     "test": "TS_NODE_COMPILER_OPTIONS='{\"module\":\"commonjs\"}' mocha -r ts-node/register \"test/test.ts\" --timeout 30000",
     "test_browser": "npm run build && open test/test.html"
   },
-  "keywords": ["html", "dom", "tag"],
+  "keywords": [
+    "html",
+    "dom",
+    "tag"
+  ],
   "author": "tom",
   "license": "MIT",
   "devDependencies": {
